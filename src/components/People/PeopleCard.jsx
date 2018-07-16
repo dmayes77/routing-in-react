@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import 'isomorphic-fetch';
+import 'es6-promise';
 
 const PeopleCard = props => {
-	console.log(props);
 	return (
 		<React.Fragment>
 			<div className="col-lg-4 col-md-6 mb-4">
@@ -14,6 +16,9 @@ const PeopleCard = props => {
 					</div>
 					<div className="card-body">
 						<p className="card-text">{props.person.films}</p>
+						<div className="bottom">
+							<Link to={`/people/${props.person.id}`}>View More</Link>
+						</div>
 					</div>
 				</div>
 			</div>

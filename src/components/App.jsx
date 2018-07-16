@@ -4,7 +4,9 @@ import 'isomorphic-fetch';
 import 'es6-promise';
 import Home from './Home';
 import Films from './Film/Films';
+import Film from './Film/Film';
 import People from './People/People';
+import Person from './People/Person';
 
 class App extends Component {
 	render() {
@@ -39,8 +41,10 @@ class App extends Component {
 						</div>
 						<Switch>
 							<Route exact path="/" component={Home} />
-							<Route path="/films" component={Films} />
-							<Route path="/people" component={People} />
+							<Route exact path="/films" component={Films} />
+							<Route path="/films/:id" component={Film} />
+							<Route exact path="/people" component={People} />
+							<Route path="/people/:id" component={Person} />
 						</Switch>
 					</div>
 				</Fragment>

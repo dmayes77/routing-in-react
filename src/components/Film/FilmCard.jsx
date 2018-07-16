@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import 'isomorphic-fetch';
+import 'es6-promise';
 
 const FilmCard = props => {
-	console.log(props);
 	return (
-		<React.Fragment>
+		<Fragment>
 			<div className="col-lg-4 col-md-6 mb-4">
 				<div className="card">
 					<div className="card-header text-white bg-dark px-3">
@@ -21,11 +23,12 @@ const FilmCard = props => {
 							<h6>
 								<strong>Produced by {props.film.producer}</strong>
 							</h6>
+							<Link to={`/films/${props.film.id}`}>View More</Link>
 						</div>
 					</div>
 				</div>
 			</div>
-		</React.Fragment>
+		</Fragment>
 	);
 };
 export default FilmCard;

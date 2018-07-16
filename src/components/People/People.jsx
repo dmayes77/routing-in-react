@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PeopleCard from './PeopleCard';
+import 'isomorphic-fetch';
+import 'es6-promise';
 
 class People extends Component {
 	constructor(props) {
